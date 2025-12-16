@@ -18,14 +18,15 @@ import javafx.stage.Stage;
 public class Restaurant extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
+public void start(Stage stage) throws Exception {
+    Parent root = FXMLLoader.load(getClass().getResource("about.fxml"));
+    Scene scene = new Scene(root);
+    
+    stage.setScene(scene);
+    stage.setTitle("Restaurant");
+    stage.setResizable(false);
+    stage.show();
+}
 
     /**
      * @param args the command line arguments
