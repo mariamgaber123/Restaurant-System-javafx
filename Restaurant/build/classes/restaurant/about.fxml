@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="672.0" prefWidth="1064.0">
+         <children>
+            <ImageView fitHeight="672.0" fitWidth="1050.0">
+               <image>
+                  <Image url="@images/0b340f_3996ca4661ef4803abd7db2f7e547718~mv2.png" />
+               </image>
+               <effect>
+                  <Blend mode="DARKEN" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="681.0" opacity="0.14" stroke="BLACK" strokeType="INSIDE" width="1054.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="58.0" stroke="BLACK" strokeType="INSIDE" width="887.0" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="70.0" top="70.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="464.0" stroke="BLACK" strokeType="INSIDE" width="395.0" StackPane.alignment="CENTER_LEFT">
+         <StackPane.margin>
+            <Insets left="70.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Pane prefHeight="427.0" prefWidth="786.0">
+         <children>
+            <Label layoutX="71.0" layoutY="205.0" prefHeight="262.0" prefWidth="376.0" text="At [Restaurant Name], we bring people together through unforgettable flavors. From fresh ingredients to carefully crafted dishes, every meal is designed to delight your senses. Enjoy a cozy atmosphere, friendly service, and a dining experience that turns every visit into a special occasion." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Light Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="152.0" layoutY="92.0" prefHeight="25.0" prefWidth="249.0" text="About Us" textFill="WHITE">
+               <font>
+                  <Font name="Corbel" size="47.0" />
+               </font>
+            </Label>
+            <Button layoutX="187.0" layoutY="496.0" mnemonicParsing="false" onAction="#gotomembers" pickOnBounds="false" prefHeight="41.0" prefWidth="161.0" style="-fx-background-color: black; -fx-border-color: #ffffff; -fx-border-radius: 30;" text="Team Members" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</StackPane>
