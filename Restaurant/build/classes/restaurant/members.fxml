@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="947.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="restaurant.FXMLDocumentController">
+   <children>
+      <Pane prefHeight="576.0" prefWidth="947.0">
+         <children>
+            <ImageView fitHeight="462.0" fitWidth="473.0" layoutX="480.0">
+               <image>
+                  <Image url="@images/0b340f_c53aef9f61064c919efc4d4d77fc74dd~mv2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="468.0" fitWidth="483.0">
+               <image>
+                  <Image url="@images/0b340f_79a915b24d2146018c228d964efc33b9~mv2.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="221.0" layoutX="-5.0" layoutY="356.0" stroke="BLACK" strokeType="INSIDE" width="958.0" />
+            <Label layoutX="360.0" layoutY="362.0" prefHeight="65.0" prefWidth="247.0" text="Team Members" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="525.0" prefHeight="37.0" prefWidth="159.0" text="Malak Osama" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="462.0" prefHeight="37.0" prefWidth="159.0" text="Mariam Gaber" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="394.0" layoutY="525.0" prefHeight="37.0" prefWidth="159.0" text="Heba Hossam" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="394.0" layoutY="462.0" prefHeight="37.0" prefWidth="159.0" text="Nada Ezzat" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="709.0" layoutY="525.0" prefHeight="37.0" prefWidth="159.0" text="Menna Nabil" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="709.0" layoutY="462.0" prefHeight="37.0" prefWidth="159.0" text="Yasmin Naser" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
