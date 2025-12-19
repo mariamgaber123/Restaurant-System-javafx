@@ -1,62 +1,124 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package restaurant;
+package restaurant.management.system;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-/**
- *
- * @author hp
- */
 
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    public Label label;
+    private Button close;
 
     @FXML
-    public AnchorPane root;
+    private Button loginBtn;
 
     @FXML
-    public ImageView backgroundImage;
+    private AnchorPane main_form;
 
-  
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField username;
+    
+    @FXML
+    private Button registerLink; // أو Hyperlink لو استخدمتيه
+    
+ // لو استخدمتي Hyperlink برضو نفس الكلام
+
+
+
+
+    // DATABASE TOOLS
+    private Connection connect;
+    private PreparedStatement prepare;
+    private ResultSet result;
+
+    @FXML
+    public void login() {
+
+        String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+        connect = database.connectDb();
+
+        Alert alert;
+
+        try {
+
+            if (username.getText().isEmpty() || password.getText().isEmpty()) {
+
+                alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Please fill all blank fields");
+                alert.showAndWait();
+                return;
+            }
+
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, username.getText());
+            prepare.setString(2, password.getText());
+
+            result = prepare.executeQuery();
+
+            if (result.next()) {
+
+                alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Information Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully login!");
+                alert.showAndWait();
+
+            } else {
+
+                alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong username or password");
+                alert.showAndWait();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+      @FXML
+public void openRegisterForm() {
+    try {
+        Parent pane = FXMLLoader.load(getClass().getResource("Register.fxml"));
+        main_form.getChildren().setAll(pane); // يشتغل مع أي نوع Parent
+    } catch (IOException e) {
+        e.printStackTrace();
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Cannot load Register.fxml");
+        alert.showAndWait();
+    }
+}
+
+
+
+
+    @FXML
+    public void close() {
+        System.exit(0);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // ربط الخلفية بحجم الصفحة
-        backgroundImage.fitWidthProperty().bind(root.widthProperty());
-        backgroundImage.fitHeightProperty().bind(root.heightProperty());
+        System.out.println("FXML Loaded Successfully");
     }
-
-    @FXML
-    public void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-
-
-   @FXML
-public void gotomembers(ActionEvent event) throws Exception {
-            System.out.println("Team Members button clicked!");
-    Parent root = FXMLLoader.load(getClass().getResource("members.fxml"));
-    Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    stage.setScene(new Scene(root));
-    stage.setResizable(false);
-    stage.show();
-}
-    
 }

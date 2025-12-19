@@ -1,0 +1,40 @@
+.left-form {
+    -fx-background-color: #fff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0 1 0 0;
+}
+
+.right-form {
+    -fx-background-color: linear-gradient(to bottom right, #25bcbf, #3796a7);
+}
+
+.textfield {
+    -fx-background-color: #efefef;
+    -fx-border-color: #ddd;
+    -fx-border-width: 0.5;
+    -fx-font-family: "Tahoma";
+}
+
+.register-btn {
+    -fx-background-color: #3796a7;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.register-btn:hover {
+    -fx-background-color: #25bcbf;
+}
+
+.close {
+    -fx-cursor: hand;
+}
+
+.hyperlink {
+    -fx-text-fill: #3796a7;
+    -fx-underline: true;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+
